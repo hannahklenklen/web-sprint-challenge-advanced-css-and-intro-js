@@ -239,8 +239,16 @@ it returns an array with names of artists who were born in and died in 20th cent
 example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(data){
-  
+function get20s(){
+  let newArray = [];
+  for(let i in artists){
+    let string = artists[i].years;
+    let num = string.split(" - ");
+    if(num[0]>1900 && num[1]<2000){
+      newArray.push(artists[i].name);
+    }
+  }
+  return newArray;
 }
 get20s();
 
